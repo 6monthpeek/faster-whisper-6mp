@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#111111"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.95"/>
+    </linearGradient>
+    <linearGradient id="sideWave" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.6"/>
+    </linearGradient>
+    <linearGradient id="outerWave" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.25"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Rounded square background -->
+  <rect x="16" y="16" width="480" height="480" rx="96" ry="96" fill="url(#bg)"/>
+  <rect x="16" y="16" width="480" height="480" rx="96" ry="96" fill="none" stroke="white" stroke-opacity="0.06" stroke-width="1.5"/>
+
+  <!-- Outer waves (fade) -->
+  <rect x="120" y="216" width="12" height="80" rx="6" fill="url(#outerWave)"/>
+  <rect x="380" y="216" width="12" height="80" rx="6" fill="url(#outerWave)"/>
+
+  <!-- Side waves -->
+  <rect x="148" y="188" width="14" height="136" rx="7" fill="url(#outerWave)"/>
+  <rect x="350" y="188" width="14" height="136" rx="7" fill="url(#outerWave)"/>
+
+  <!-- Mid waves -->
+  <rect x="180" y="196" width="16" height="120" rx="8" fill="url(#sideWave)"/>
+  <rect x="316" y="196" width="16" height="120" rx="8" fill="url(#sideWave)"/>
+
+  <!-- Inner waves (stronger) -->
+  <rect x="212" y="172" width="18" height="168" rx="9" fill="url(#sideWave)"/>
+  <rect x="282" y="172" width="18" height="168" rx="9" fill="url(#sideWave)"/>
+
+  <!-- Center wave (strongest) with glow -->
+  <rect x="245" y="148" width="22" height="216" rx="11" fill="url(#wave)" filter="url(#glow)"/>
+
+  <!-- Subtle accent line at bottom -->
+  <line x1="200" y1="400" x2="312" y2="400" stroke="white" stroke-opacity="0.15" stroke-width="2" stroke-linecap="round"/>
+</svg>
